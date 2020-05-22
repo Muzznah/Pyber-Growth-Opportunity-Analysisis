@@ -34,7 +34,7 @@ For detailed analysis check PyBer_Analysis.ipynb.
 
 1.	SD shows that the total rides, total drivers, and total fares increase in the order of Rural, Suburban and Urban but the avg fare per ride and driver decrease in the same order. This shows that there exists an inverse relationship between the first and second set of variables.
 
-Insert table
+![](Analysis/SD.png)
 
 2.	MP shows that the range for total fares across city types in as follows:
 a.	Urban: 1600-2500 $
