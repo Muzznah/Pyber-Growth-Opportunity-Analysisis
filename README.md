@@ -8,9 +8,9 @@ The purpose of this analysis is to help PyBer, a ride-sharing app, identify how 
 
 ### Resources
 
-•	Data Source: ride_data.csv and city_data.csv.
+• Data Source: ride_data.csv and city_data.csv.
 
-•	Software: Python 3.7.7, Jupytor Notebook 6.0.3, Conda 4.8.3, Pandas 1.0.3 and Matplotlib 3.1.3.
+• Software: Python 3.7.7, Jupytor Notebook 6.0.3, Conda 4.8.3, Pandas 1.0.3 and Matplotlib 3.1.3.
 
 ### Technical Analysis
 
@@ -38,11 +38,11 @@ For detailed analysis check PyBer_Analysis.ipynb.
 
 2. MP shows that the range for total fares across city types in as follows:
 
-a. Urban: 1600-2500 $
+	a. Urban: 1600-2500 $
 
-b. Suburban: 700-1400 $
+	b. Suburban: 700-1400 $
 
-c. Rural: 100-500 $
+	c. Rural: 100-500 $
 
 ![](Analysis/Fig8.png)
 
