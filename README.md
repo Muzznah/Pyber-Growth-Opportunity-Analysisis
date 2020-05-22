@@ -88,9 +88,11 @@ The above code resulted in the desired output but it did not add “Fare” and 
 
 	fare_data_df = pyber_data_df[["City Type","Fare"]].copy()
 
-3. Inspection of Venn diagrams providing an explanation of merge(how=left) showed that the data was merged after giving priority to the data in the left frame. This resulted in the repetition of driver count in the MD. To get an accurate value of total drivers it had to be calculated using the city_data.csv. 
+3. Inspection of Venn diagrams(https://www.w3schools.com/sql/sql_join.asp) providing an explanation of merge(how=left) showed that the data was merged after giving priority to the data in the left frame. This resulted in the repetition of driver count in the MD. To get an accurate value of total drivers it had to be calculated using the city_data.csv. 
 
-4. In addition to official documentation a lot of queries on stack overflow and blog posts for plotting “FiveThirtyEight” style graph and trial and error approach helped resolve the issue.
+
+4. In addition to official documentation(https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.pyplot.xticks.html) a lot of queries on stack overflow and blog posts for plotting “FiveThirtyEight” style graph and trial and error approach helped resolve the issue.
+
 
 ## Recommendations and Next Steps
 
