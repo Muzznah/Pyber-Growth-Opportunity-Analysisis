@@ -28,7 +28,7 @@ The values for summary data frame were calculated using pandas’ function of su
 
 The values for plotting the graph were tabulated by first, using pandas’ function of copy () on MD to create a new data frame containing only dates, fares, and city types. Then groupby() and sum() were used for tabulation. The new data frame was then converted into a pivot table. A selection of date range from Jan to April was made using pandas’ function of loc () and the data was binned into weekly bins using resample () and finally the graph was plotted using the object-oriented approach.
 
-For detailed analysis check PyBer_Analysis.ipynb.
+For detailed analysis check [](PyBer_Analysis.ipynb).
 					
 ### Results
 
