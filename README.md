@@ -20,9 +20,9 @@ The ride_data.csv contained information about, city, date, fare, and ride-id and
 
 After checking the two data sets for null values, they were merged to form a new dataframe (MD) for further analysis. The two deliverables created for analysis were: 
 
-1.	A summary data-frame (SD) showcasing, total rides, total drivers, total fares, average fare per ride and average fare per driver
+1. A summary data-frame (SD) showcasing, total rides, total drivers, total fares, average fare per ride and average fare per driver
 
-2.	And a multiple-line plot (MP) showcasing the sum of fares for each city type.
+2. And a multiple-line plot (MP) showcasing the sum of fares for each city type.
 
 The values for summary data frame were calculated using pandas’ function of sum (), count () and groupby () on MD. 
 
@@ -32,18 +32,19 @@ For detailed analysis check PyBer_Analysis.ipynb.
 					
 ### Results
 
-1.	SD shows that the total rides, total drivers, and total fares increase in the order of Rural, Suburban and Urban but the avg fare per ride and driver decrease in the same order. This shows that there exists an inverse relationship between the first and second set of variables.
+1. SD shows that the total rides, total drivers, and total fares increase in the order of Rural, Suburban and Urban but the avg fare per ride and driver decrease in the same order. This shows that there exists an inverse relationship between the first and second set of variables.
 
 ![](Analysis/SD.png)
 
-2.	MP shows that the range for total fares across city types in as follows:
-a.	Urban: 1600-2500 $
-b.	Suburban: 700-1400 $
-c.	Rural: 100-500 $
+2. MP shows that the range for total fares across city types in as follows:
+
+a. Urban: 1600-2500 $
+
+b. Suburban: 700-1400 $
+
+c. Rural: 100-500 $
 
 ![](Analysis/Fig8.png)
-
-
 
 ### Summary
 
@@ -55,41 +56,41 @@ The analysis shows that the total fare across different types of cities, is stab
 
 **Programming**
 
-While creating a copy of the pyberdf and adding city type and fare column to it I struggled to combine it into one step. The following code:
+Figuring how to add two columns with a copy function while chaining it with pd.DataFrame.
 
-fare_data_df=pd.DataFrame(pyber_data_df.copy()["City Type"])
-fare_data_df["Fare"]=pyber_data_df["Fare"].copy()
+	fare_data_df=pd.DataFrame(pyber_data_df.copy()["City Type"])
+	fare_data_df["Fare"]=pyber_data_df["Fare"].copy()
 
-resulted in the desired output but I could not find a way to add both “Fare” and “City Type” column at the same time.
+The above code resulted in the desired output but it did not add “Fare” and “City Type” column in the same line.
 
 
 **Data analysis:**
 
-1. Understanding the difference between the merge(how=left) and       merge(how=inner) and its impacts on the new data-frame formed.
+1. Understanding the difference between the merge(how=left) and merge(how=inner) and its impacts on the new data-frame formed.
 
-2. Understanding that calculating total drivers, using the merged data-    frame, resulted in overstating the count. 
+2. Understanding that calculating total drivers, using the merged data-frame, resulted in overstating the count. 
 
 **Graphing:**
 
-1.	Had a difficulty understanding if I required additional libraries to plot the “FiveThirtyEight” styled graph or I could just do it with matplotlib.
-2.	Initially plotted it by importing seaborn.
+1. Had a difficulty understanding if I required additional libraries to plot the “FiveThirtyEight” styled graph or I could just do it with matplotlib.
+2. Initially plotted it by importing seaborn.
 
-3.	Changing the X-labels to Months when the ticks were by weeks.
+3. Changing the X-labels to Months when the ticks were by weeks.
 
-4.	Adjusting grid lines and ticks to display only 3 and 4 of them, respectively.
+4. Adjusting grid lines and ticks to display only 3 and 4 of them, respectively.
 
 
 ### Technical Analyses Used
 
-1.	Internet search of official documentation and a thorough analysis of examples provided in them. 
+1. Internet search of official documentation and a thorough analysis of examples provided in them. 
 
-2.	Through trial and error and discussion with peers I figured out that by using double square brackets instead of “pd.DataFrame I could get a new dataframe with both the columns in one line:
+2. Through trial and error and discussion with peers I figured out that by using double square brackets instead of “pd.DataFrame I could get a new dataframe with both the columns in one line:
 
-fare_data_df = pyber_data_df[["City Type","Fare"]].copy()
+	fare_data_df = pyber_data_df[["City Type","Fare"]].copy()
 
-3.	Inspection of Venn diagrams providing an explanation of merge(how=left) showed that the data was merged after giving priority to the data in the left frame. This resulted in the repetition of driver count in the MD and hence to get an accurate value of total drivers it had to be calculated using the city_data.csv. 
+3. Inspection of Venn diagrams providing an explanation of merge(how=left) showed that the data was merged after giving priority to the data in the left frame. This resulted in the repetition of driver count in the MD. To get an accurate value of total drivers it had to be calculated using the city_data.csv. 
 
-4.	In addition to official documentation a lot of queries on stack overflow and blog posts for plotting “FiveThirtyEight” style graph and trial and error approach helped resolve the issue.
+4. In addition to official documentation a lot of queries on stack overflow and blog posts for plotting “FiveThirtyEight” style graph and trial and error approach helped resolve the issue.
 
 ## Recommendations and Next Steps
 
@@ -113,20 +114,22 @@ Understanding the demand-supply equation of a city. Are the number of drivers en
 
 **Description of Approach**
 
-We should also consider increasing the date range of the data set from 4 months to a year to get a better picture and identify if there exist a seasonal variability in fares and ride counts across city types. another “FiveThirtyEight” style plot for total rides per city types should be plotted across weakly bins. Significant spikes and variations can highlight an opportunity for increasing the driver count for that seasonal window. 
+We should also consider increasing the date range of the data set from 4 months to a year to get a better picture and identify if there exist a seasonal variability in fares and ride counts, across city types. another “FiveThirtyEight” style plot, for total rides per city types should be plotted across weakly bins. Significant spikes, and variations can highlight an opportunity for increasing the driver count for that seasonal window. 
 
 **Technical Steps**
-1.	Upload an updated ride_data.csv with data for entire year and merge it with the city_data.csv.
-2.	Filter the relevant columns of date, city type and ride count (using loc).
-3.	Calculate the sum of ride counts using groupby and sum function.
-4.	Create a pivot table with dates as index, column as city types and data as ride count.
-5.	Resample into weekly bins and sum the ride count.
-6.	Plot the graph using matplotlib.
-7.	With sun of rides on y axis and dates (labels=months) on x-axis.
+
+1. Upload an updated ride_data.csv with data for entire year and merge it with the city_data.csv.
+2. Filter the relevant columns of date, city type and ride count (using loc).
+3. Calculate the sum of ride counts using groupby and sum function.
+4. Create a pivot table with dates as index, column as city types and data as ride count.
+5. Resample into weekly bins and sum the ride count.
+6. Plot the graph using matplotlib.
+7. With sun of rides on y axis and dates (labels=months) on x-axis.
 
 ### Additional Analysis 2
 
 **Description of Approach**
+
 To check affordability, we need to analyze disposable income or average income across city types. We can map the incomes on a boxplot to identify median income and get an idea about our income data shape and how it is spread across cities. It will also help us identify outliers.
 
 After the box plot analysis, we can check if income is corelated with the number of rides taken. The assumption is that the correlation between the two variables should be positive. We can map this by plotting average income and ride counts across city types.
