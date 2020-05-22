@@ -41,7 +41,7 @@ a.	Urban: 1600-2500 $
 b.	Suburban: 700-1400 $
 c.	Rural: 100-500 $
 
-Insert plot
+![](Analysis/Fig8.png)
 
 
 
