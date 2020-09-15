@@ -126,7 +126,7 @@ We should also consider increasing the date range of the data set from 4 months 
 4. Create a pivot table with dates as index, column as city types and data as ride count.
 5. Resample into weekly bins and sum the ride count.
 6. Plot the graph using matplotlib.
-7. With sun of rides on y axis and dates (labels=months) on x-axis.
+7. With sum of rides on y axis and dates (labels=months) on x-axis.
 
 ### Additional Analysis 2
 
